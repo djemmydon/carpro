@@ -13,8 +13,8 @@ function Card({ item }) {
   console.log(urlFor(item?.images[1]))
   
   return (
-    <Link href={`cars/${item.slug.current}`} className={styles.body}>
-      
+    <div className={styles.body}>
+      <Link href={`cars/${item.slug.current}`}>
       <Image src={urlFor(item.images[0]).url()} width={300} height={200}  className={styles.image} />
       <div className={styles.price}>
         <p>₦{parseInt(item.price).toLocaleString() }</p>
@@ -27,7 +27,9 @@ function Card({ item }) {
           <h3>{item.title}</h3>
         </div>
 
-        <ReactWhatsapp  className={styles.button} number="+2348136809407" message="Hello World!!!">
+        </div>
+      </Link>
+      <ReactWhatsapp  className={styles.button} number="+2348136809407" message="Hello World!!!">
                     <span>
 
                     <div>
@@ -38,8 +40,7 @@ function Card({ item }) {
                     </div>
                     </span>
                     </ReactWhatsapp>
-      </div>
-    </Link>
+    </div>
   );
 }
 
