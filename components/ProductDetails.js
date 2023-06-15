@@ -3,7 +3,7 @@
 import { urlFor } from "@/utils/sanity";
 import Image from "next/image";
 import styles from "../styles/productDetails.module.css";
-import {motion} from "framer-motion"
+
 import { AiFillPhone, AiOutlineWhatsApp, AiFillMail } from 'react-icons/ai';
 import { useState } from "react";
 import ReactWhatsapp from 'react-whatsapp';
@@ -49,7 +49,7 @@ const CarDetails = ({ post}) => {
     <div key={index} className={styles.extraImage}
         onClick={() => click(index)}
     >
-        <motion.img
+        <img
          width={100}
             
         height={100}
