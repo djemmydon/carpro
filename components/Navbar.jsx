@@ -1,24 +1,30 @@
+"use client"
+import Hamburger from "hamburger-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import styles from "../styles/navbar.module.css";
 import Search from "./Search";
 
 
 function Navbar() {
+  const [open, setOpen] = useState(false)
+  
   return (
     <div className={styles.navBody}>
       <div className={styles.navLogo}>
         <Image src="/images/carlogo1.png" width={100} height={50} />
       </div>
 
-      <div className={styles.navList}>
+      <div className={open ?` ${styles.navList } ${styles.navListMobile}`: styles.navList }>
+ 
+      
         <ul>
           <li>
             <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/">New Motors</Link>
+            <Link href="/cars">New Motors</Link>
           </li>
           <li>
             <Link href="/">About Us</Link>
@@ -29,9 +35,9 @@ function Navbar() {
         </ul>
       </div>
 
-      {/* <div className={styles.searchInput}>
-
-      </div> */}
+      <div className={styles.searchInput}>
+      <Hamburger toggled={open} toggle={setOpen} color="#428bca" />
+      </div>
     </div>
   );
 }

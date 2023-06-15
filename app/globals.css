@@ -108,23 +108,19 @@ a {
   }
 }
 
-.www {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
+.head{
+  color: #000;
+  text-align: center;
+  margin: 2rem 0 ;
 }
 
-.www p {
-  text-align: center;
-  color: rgb(255, 0, 0);
-  font-size: 2rem;
-  width: 300px;
+.head h2{
+  font-size: 1.3rem;
+  margin: .4rem 0 ;
+
 }
-.www h2 {
-  text-align: center;
-  color: black;
-  font-size: 3rem;
-  width: 300px;
+.head p{
+  font-size: .8rem;
+  margin: .4rem 0 ;
+
 }

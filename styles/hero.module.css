@@ -27,6 +27,10 @@
   width: 130px;
   height: 40px;
   font-family: "Roboto", sans-serif;
+  background-color: #428bca;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
 }
 
 @media screen and (max-width:900px) { 

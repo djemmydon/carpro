@@ -26,8 +26,8 @@ function Hero() {
         <div className="images">
           <Image
             src="/images/car1.png"
-            width={800}
-            height={600}
+            width={700}
+            height={550}
             data-aos="fade-left"
             data-aos-duration={800}
           />

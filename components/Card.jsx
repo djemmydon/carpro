@@ -7,9 +7,11 @@ import { urlFor } from "@/utils/sanity";
 import Link from "next/link";
 import ReactWhatsapp from "react-whatsapp";
 import { AiFillPhone, AiOutlineWhatsApp, AiFillMail } from 'react-icons/ai';
+// import { useRouter } from "next/navigation";
 
 
 function Card({ item }) {
+  // const router = useRouter()
   console.log(urlFor(item?.images[1]))
   
   return (
@@ -29,7 +31,7 @@ function Card({ item }) {
 
         </div>
       </Link>
-      <ReactWhatsapp  className={styles.button} number="+2348136809407" message="Hello World!!!">
+      <ReactWhatsapp  className={styles.button} number="+2348136809407" message={`Hello, I am here to make enquiries  about ${item.title}`}>
                     <span>
 
                     <div>
