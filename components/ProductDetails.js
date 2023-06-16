@@ -7,7 +7,6 @@ import styles from "../styles/productDetails.module.css";
 import { AiFillPhone, AiOutlineWhatsApp, AiFillMail } from 'react-icons/ai';
 import { useState } from "react";
 import ReactWhatsapp from 'react-whatsapp';
-import { useParams, useRouter } from "next/navigation";
 
 
 const CarDetails = ({ post}) => {
@@ -16,10 +15,9 @@ const CarDetails = ({ post}) => {
 
     const click = (img) => {
         setIndex(img)
+        console.log(img)
         
     }
-    // console.log(post)
-
     return (
         <div className={styles.body}>
               {/* <img className={styles.imageHead} src={urlFor( post?.images[index]).url()} /> */}
@@ -50,9 +48,9 @@ const CarDetails = ({ post}) => {
         onClick={() => click(index)}
     >
         <img
-         width={100}
+         width={50}
             
-        height={100}
+        height={50}
       src={urlFor(item).url()}
             alt="car gallery"
             className={styles.image}

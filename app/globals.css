@@ -124,3 +124,7 @@ a {
   margin: .4rem 0 ;
 
 }
+
+.loading{
+  height: 100vh;
+}

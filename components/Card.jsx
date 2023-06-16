@@ -12,8 +12,6 @@ import { AiFillPhone, AiOutlineWhatsApp, AiFillMail } from 'react-icons/ai';
 
 function Card({ item }) {
   // const router = useRouter()
-  console.log(urlFor(item?.images[1]))
-  
   return (
     <div className={styles.body}>
       <Link href={`cars/${item.slug.current}`}>

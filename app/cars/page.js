@@ -1,4 +1,4 @@
-"use client"
+
 import Card from "@/components/Card";
 import { client } from "@/utils/sanity";
 
@@ -14,12 +14,15 @@ export const getProduct = async () => {
     };
   };
 async function Cars() {
-    const data = await getProduct()
+// const [data, setData] = useState([])
+const data = await getProduct()
+console.log(data)
 
+console.log(data)
     return (
         <>
           <div className="head">
-        <h2>All Cars</h2>
+        <h2>Al                                                                                                                   l Cars</h2>
         <p>People liked the most listed here</p>
             </div>
             
