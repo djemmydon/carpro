@@ -31,7 +31,6 @@ const CarDetails = ({ post}) => {
                 <div>
                     <div
                         loop={true}
-                        spaceBetween={1}
                         className={styles.ProductDetailShowImage}
                     >
                     <div>

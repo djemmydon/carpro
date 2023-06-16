@@ -1,4 +1,4 @@
-
+"use client"
 
 import CarDetails from "@/components/ProductDetails"
 import { client } from "@/utils/sanity"
