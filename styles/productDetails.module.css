@@ -127,3 +127,12 @@ font-family: "Roboto", sans-serif;
     flex-direction: column;
     align-items: center;
 }
+
+@media screen and (max-width: 600px) {
+    .imageHead{
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+    
+}

@@ -44,7 +44,7 @@ const CarDetails = ({ post}) => {
 
 {post?.images.map((item, index) => (
     <div key={index} className={styles.extraImage}
-        // onClick={() => click(index)}
+        onClick={() => click(index)}
     >
         <img
          width={50}

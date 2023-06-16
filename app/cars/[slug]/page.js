@@ -7,8 +7,6 @@ import { groq } from "next-sanity"
 async function Details({ params: { slug } }) {
     const query = groq`*[_type == "cars" && slug.current == $slug][0]`
   const post = await client.fetch(query, { slug })
-  
-  console.log(post)
 
     return (
         <div style={{backgroundColor:"#010"}}>
