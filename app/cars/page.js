@@ -1,4 +1,4 @@
-
+"use client"
 import Card from "@/components/Card";
 import { client } from "@/utils/sanity";
 
