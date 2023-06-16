@@ -28,8 +28,6 @@ function Hero() {
             src="/images/car1.png"
             width={700}
             height={550}
-            data-aos="fade-left"
-            data-aos-duration={800}
           />
         </div>
       </div>
