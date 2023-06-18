@@ -27,7 +27,7 @@ function Navbar() {
             <Link href="/cars">New Motors</Link>
           </li>
           <li>
-            <Link href="/">About Us</Link>
+            <Link href="/sell-car">Sell Cars</Link>
           </li>
           <li>
             <Link href="/">Contact</Link>

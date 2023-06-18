@@ -1,0 +1,128 @@
+.main{
+    background-color: #f5faff;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainBody{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 40px;
+    height: 100%;
+    padding: 10px;
+
+}
+
+
+.text{
+    width: 500px;
+
+}
+.text h2{
+font-size: 2rem;
+color:  #428bca;
+}
+
+.text p{
+    color: gray;
+    font-size: 0.8rem;
+
+}
+
+.form{
+width: 500px;
+color: #000;
+background-color: #fff;
+border-radius: 10px;
+
+}
+
+.formBody{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto";
+    gap: .5rem;
+    padding: 2rem 0;
+
+}
+
+.formItem{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 20px;
+
+}
+
+.formItem input{
+    border-radius: 10px;
+    outline: none;
+    background: none;
+    height: 40px;
+    width: 400px;
+    color: #000;
+    font-size: 1rem;
+    border: 1px solid rgb(197, 197, 197);
+    padding: 2px 5px;
+    
+}
+
+.formItem input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    border-width: thin;
+}
+
+.formItem input[type="time"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    border-width: thin;
+}
+
+.formBody button{
+width: 100px;
+height: 40px;
+border: none;
+outline: none;
+background-color:  #428bca;
+color: #fff;
+font-size: 1rem;
+font-family: "Roboto";
+border-radius: 10px;
+
+}
+@media screen and (max-width: 800px) {
+    .main{
+    width: 100%;
+    height: 100%;
+    
+    }
+    .mainBody{
+       
+    flex-wrap: wrap;
+    }
+    
+    .text{
+        width: 100%;
+    
+    }
+    .form{
+        width: 100%;
+    }
+
+.formItem input{
+width: 300px;
+}
+    }
+    
