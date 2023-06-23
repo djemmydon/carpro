@@ -29,7 +29,6 @@ const SellCar = () => {
     const onSubmit =async (e) => {
         e.preventDefault();
         setLoading(true)
-        console.log(data)
         await fetch("/api/sell",{
             method: "POST",
             body: JSON.stringify(data),
@@ -39,11 +38,9 @@ const SellCar = () => {
         }).then((response) => {
             try {
                 if (response.ok) {
-                    console.log(response.data)
                     setLoading(false)
                 }
             } catch (error) {
-                console.log(error)
                 setLoading(false)
             } finally {
                 setLoading(false)

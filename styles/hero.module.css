@@ -30,8 +30,16 @@
   background-color: #428bca;
   border: none;
   border-radius: 10px;
-  font-size: 1rem;
+  font-size: 1rem;  
+  transition: 0.5s;
 }
+.content button:hover{
+
+background-color: #ffffff;
+border: 1px solid gray;
+color:black
+}
+
 
 @media screen and (max-width:900px) { 
   .text{

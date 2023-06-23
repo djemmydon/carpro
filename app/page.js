@@ -3,6 +3,7 @@
 import Card from "@/components/Card";
 import Hero from "@/components/Hero";
 import { client } from "@/utils/sanity";
+import Link from "next/link";
 
 export const getProduct = async () => {
   const query =`*[_type == 'cars' ]`;
@@ -46,7 +47,13 @@ export default async function Home () {
 
         ))}
       </div>
-
+      <div className="buttons">
+        <Link href="/cars">
+        <button >Sales Agent</button>
+        </Link>
+    </div>
+      
+     
   
     </main>
   );

@@ -17,7 +17,7 @@ position: relative;
     top: 0;
     left: -100%;
     width: 250px;
-    background: #428bca;
+    background: #fdfeff;
     height: 100vh;
     z-index: 100;
     transition: .3s;
@@ -33,8 +33,10 @@ position: relative;
       padding: 2rem 10px;
     }
     .navList.navListMobile ul li {
-   color: white;
-   font-size: 1.5rem;
+   color: rgb(4, 4, 4);
+   font-size: 1rem;
+  border-bottom: 1px solid rgb(206, 202, 202);
+
     }
     .navBody {
  
@@ -49,11 +51,14 @@ position: relative;
   display: flex;
   color: rgb(0, 0, 0);
   gap: 20px;
+  padding: 0px;
+  margin: 0px;
 }
 
 .navList ul li {
   font-family: "Roboto", sans-serif;
   list-style: none;
+  padding:0px 0 10px 0px;
 }
 
 .searchBody button{
@@ -70,8 +75,33 @@ position: relative;
 
 }
 
+.button {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ width: 200px;
+}
+.button button{
+  width: 150px;
+  height: 30px;
+  background-color: #428bca;
+  border: none;
+  transition: 0.5s;
+  }
+  .button button:hover{
+  width: 150px;
+  height: 30px;
+  background-color: #ffffff;
+  border: 1px solid gray;
+  color:black
+  }
+
 @media screen and (max-width: 600px) {
 .searchInput{
 display: block;
 }
+.button {
+  display: none;
 }
+}
+

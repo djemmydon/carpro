@@ -128,3 +128,21 @@ a {
 .loading{
   height: 100vh;
 }
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+.buttons button{
+  width: 150px;
+  height: 30px;
+  background-color: #428bca;
+  border: none;
+  transition: 0.5s;
+  }
+  .buttons button:hover{
+  width: 150px;
+  height: 30px;
+  background-color: #ffffff;
+  border: 1px solid gray;
+  color:black
+  }

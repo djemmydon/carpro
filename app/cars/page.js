@@ -16,9 +16,6 @@ export const getProduct = async () => {
 async function Cars() {
 // const [data, setData] = useState([])
 const data = await getProduct()
-console.log(data)
-
-console.log(data)
     return (
         <>
           <div className="head">
