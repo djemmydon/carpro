@@ -96,12 +96,19 @@ position: relative;
   color:black
   }
 
+  .sale{
+    display: none;
+  }
 @media screen and (max-width: 600px) {
 .searchInput{
 display: block;
 }
 .button {
   display: none;
+}
+
+.sale{
+  display: block;
 }
 }
 

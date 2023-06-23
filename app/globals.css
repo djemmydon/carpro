@@ -131,6 +131,7 @@ a {
 .buttons {
   display: flex;
   justify-content: center;
+  margin: 2rem 0;
 }
 .buttons button{
   width: 150px;

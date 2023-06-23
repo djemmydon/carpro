@@ -37,6 +37,9 @@ function Navbar() {
           <li>
             <Link href="/">Contact</Link>
           </li>
+          <li className={styles.sale}>    <Link href="/signup">
+          Sales Agent
+        </Link></li>
         </ul>
       </div>
 
