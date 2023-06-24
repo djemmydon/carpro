@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Card from "@/components/Card";
 import Hero from "@/components/Hero";
@@ -6,20 +6,18 @@ import { client } from "@/utils/sanity";
 import Link from "next/link";
 
 export const getProduct = async () => {
-  const query =`*[_type == 'cars' ]`;
+  const query = `*[_type == 'cars' ]`;
 
   const products = await client.fetch(query);
   return {
     props: {
-      data: products.slice(1,7),
-
+      data: products.slice(1, 7),
     },
   };
 };
 
-
-export default async function Home () {
-  const data = await getProduct()
+export default async function Home() {
+  const data = await getProduct();
 
   return (
     <main>
@@ -39,24 +37,15 @@ export default async function Home () {
           margin: 20,
         }}
       >
-
         {data.props.data.map((item) => (
-        <Card
-        item={item}
-        />
-
+          <Card item={item} />
         ))}
       </div>
       <div className="buttons">
         <Link href="/cars">
-        <button >Sales Agent</button>
+          <button>Sales Agent</button>
         </Link>
-    </div>
-      
-     
-  
+      </div>
     </main>
   );
 }
-
-

@@ -6,50 +6,47 @@ import bcrypt from "bcrypt";
 import Cookies from "js-cookie";
 import { createClient } from "next-sanity";
 
-
-
 export const POST = async (req, res) => {
-    const data = await req.json();
-    
+  const data = await req.json();
 
-  
   const sanity = {
     projectId: process.env.NEXT_PUBLIC_APP_KEY,
     dataset: "production",
     token: process.env.NEXT_PUBLIC_APP_TOKEN,
-  }
+  };
 
-  const clients = createClient(sanity)
+  const clients = createClient(sanity);
 
-
-    
   try {
-  
+    const users = await clients.fetch(
+      `*[_type == 'user' && email == $email] [0]  `,
+      {
+        email: data.email,
+      }
+    );
 
-    const users = await clients.fetch(`*[_type == 'user' && email == $email] [0]  `, {
-      email: data.email,
-    });
-  
-    if(users) {
+    if (users) {
       return new Response(`User Already Exist`, {
         status: 500,
       });
     }
-  
+    const salt = await bcrypt.genSalt();
+    const passwordHash = await bcrypt.hash(data.password, salt);
     await clients.create({
       _type: "user",
-      name:data.name,
+      name: data.name,
       email: data.email,
       phone: data.phone,
       city: data.city,
       state: data.state,
-      password: data.password,
-    })
-    
+      password: passwordHash,
+    });
+
     await transporter.sendMail({
       ...mailOptions,
-    subject: "Congratulations 🎉! A new agent has just signed up on your website",
-    html: `
+      subject:
+        "Congratulations 🎉! A new agent has just signed up on your website",
+      html: `
     <html>
 
     
@@ -123,25 +120,20 @@ export const POST = async (req, res) => {
 
     </html>
     `,
-      
-    })
-    
+    });
+
     Cookies.set("user", {
       name: data.name,
       email: data.email,
-      phone: data.phone
-  })
-   
-return new Response(JSON.stringify(data), {
-  status: 201,
-});
+      phone: data.phone,
+    });
 
-        
-   
-
-    } catch (error) {
-      return new Response(`${error} What is this`, {
-        status: 500,
-      });
-    }
-  };
+    return new Response(JSON.stringify({data}), {
+      status: 201,
+    });
+  } catch (error) {
+    return new Response(`${error} What is this`, {
+      status: 500,
+    });
+  }
+};

@@ -2,13 +2,14 @@
   background-color: rgb(255, 255, 255);
   /* height: 70px; */
   display: flex;
-justify-content: space-around;
+  justify-content: space-around;
   align-items: center;
   padding: 20px 20px;
 }
 
 .navList {
-position: relative;
+  position: relative;
+  z-index: 100;
 }
 
 @media screen and (max-width: 600px) {
@@ -19,32 +20,29 @@ position: relative;
     width: 250px;
     background: #fdfeff;
     height: 100vh;
-    z-index: 100;
-    transition: .3s;
-    }
- .navListMobile{
-      left: 0;
+    z-index: 500;
 
-    }
+    transition: 0.3s;
+  }
+  .navListMobile {
+    left: 0;
+  }
 
-    .navList.navListMobile ul {
-      display: flex;
-      flex-direction: column;
-      padding: 2rem 10px;
-    }
-    .navList.navListMobile ul li {
-   color: rgb(4, 4, 4);
-   font-size: 1rem;
-  border-bottom: 1px solid rgb(206, 202, 202);
-
-    }
-    .navBody {
- 
+  .navList.navListMobile ul {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 10px;
+  }
+  .navList.navListMobile ul li {
+    color: rgb(4, 4, 4);
+    font-size: 1rem;
+    border-bottom: 1px solid rgb(206, 202, 202);
+  }
+  .navBody {
     justify-content: space-between;
-      align-items: center;
-      padding: 20px 20px;
-    }
-    
+    align-items: center;
+    padding: 20px 20px;
+  }
 }
 
 .navList ul {
@@ -58,57 +56,58 @@ position: relative;
 .navList ul li {
   font-family: "Roboto", sans-serif;
   list-style: none;
-  padding:0px 0 10px 0px;
+  padding: 0px 0 10px 0px;
 }
 
-.searchBody button{
+.searchBody button {
   height: 30px;
-  padding:0 10px;
+  padding: 0 10px;
   border-radius: 0;
-  background-color: rgba(252,185,0,1);
+  background-color: rgba(252, 185, 0, 1);
   border: none;
 }
 
-.searchInput{
-
+.searchInput {
   display: none;
-
 }
 
 .button {
- display: flex;
- justify-content: center;
- align-items: center;
- width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
 }
-.button button{
+.button button {
   width: 150px;
   height: 30px;
   background-color: #428bca;
   border: none;
   transition: 0.5s;
-  }
-  .button button:hover{
+}
+.button button:hover {
   width: 150px;
   height: 30px;
   background-color: #ffffff;
   border: 1px solid gray;
-  color:black
-  }
-
-  .sale{
-    display: none;
-  }
-@media screen and (max-width: 600px) {
-.searchInput{
-display: block;
+  color: black;
 }
-.button {
+
+.sale {
   display: none;
 }
+@media screen and (max-width: 600px) {
+  .searchInput {
+    display: block;
+  }
+  .button {
+    display: none;
+  }
 
-.sale{
-  display: block;
-}
-}
+  .sale {
+    display: block;
+  }
 
+  .change{
+    display: none;
+  }
+}

@@ -17,7 +17,7 @@ const SignUp = () => {
 
     const user = Cookies.get('user') 
     const userObject = user ? JSON.parse(user) : null
-    const firstWord = user && userObject.name.split(" ")[0];
+    const firstWord = user && userObject?.user.name.split(" ")[0];
     console.log(firstWord)
 
     const [data, setData] = useState({
@@ -29,7 +29,7 @@ const SignUp = () => {
         password:""
     })
 
-    if (userObject?.email) {
+    if (userObject?.user?.email) {
         router.push("/")
     }
 
