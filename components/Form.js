@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "../styles/footer.module.css";
 
 const Form = ({ styling, onSubmit, onChangeData, loading }) => {
@@ -140,6 +141,8 @@ export const Form2 = ({ styling, onSubmit, onChangeData, loading }) => {
         </div>
 
         <button type="submit">{loading ? "Loading" : "Sign Up"} </button>
+        <p>Already have an account <Link href="/signin" style={{color:"#428bca"}}>Login</Link></p>
+
       </div>
     </form>
   );
@@ -160,7 +163,7 @@ export const Form3 = ({ styling, onSubmit, onChangeData, loading }) => {
             placeholder="Enter your email"
           />
         </div>
-    
+
         <div className={styling.formItem}>
           <label>Password</label>
           <input
@@ -171,7 +174,10 @@ export const Form3 = ({ styling, onSubmit, onChangeData, loading }) => {
           />
         </div>
 
-        <button type="submit">{loading ? "Loading" : "Sign Up"} </button>
+        <button type="submit">{loading ? "Loading..." : "Sign Up"} </button>
+
+        <p>Create a new account <Link href="/signup" style={{color:"#428bca"}}>Signup</Link></p>
+
       </div>
     </form>
   );

@@ -43,9 +43,9 @@ function Navbar() {
                 <p style={{ color: "#428bca" }}>{firstWord}</p>
               </div>
             ) : (
-              <div className={styles.button}>
+          
                 <Link href="/signup">Sales Agent</Link>
-              </div>
+         
             )}
           </li>
         </ul>
