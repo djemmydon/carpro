@@ -40,21 +40,23 @@ function Navbar() {
           <li onClick={() => setOpen(false)}>
             <Link href="/">Contact</Link>
           </li>
-    
+
           <li onClick={() => setOpen(false)} className={styles.sale}>
             {userObject ? (
               <div>
                 <p
                   onClick={() => {
                     Cookies.remove("user");
-                    router.push("/");
+                    router.reload(window.location.pathname);
                   }}
                   style={{ color: "#fe2020" }}
                 >
                   Logout
                 </p>
               </div>
-            ) : null}
+            ) : (
+              <Link href="/signin">Login</Link>
+            )}
           </li>
         </ul>
       </div>
@@ -78,7 +80,7 @@ function Navbar() {
                 }}
                 onClick={() => {
                   Cookies.remove("user");
-                  router.push("/");
+                  router.reload(window.location.pathname);
                 }}
               >
                 Logout
