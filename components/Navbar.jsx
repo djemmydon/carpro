@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 import styles from "../styles/navbar.module.css";
 
 function Navbar() {
@@ -48,6 +49,7 @@ function Navbar() {
                   onClick={() => {
                     Cookies.remove("user");
                     router.reload(window.location.pathname);
+                    toast("Logout successfully✔️");
                   }}
                   style={{ color: "#fe2020" }}
                 >
@@ -81,6 +83,7 @@ function Navbar() {
                 onClick={() => {
                   Cookies.remove("user");
                   router.reload(window.location.pathname);
+                  toast("Logout successfully✔️");
                 }}
               >
                 Logout
