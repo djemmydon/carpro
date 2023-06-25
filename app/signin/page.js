@@ -22,7 +22,7 @@ const SignUp = () => {
     password: "",
   });
 
-  if (userObject?.user?.email) {
+  if (userObject?.data?.email) {
     router.push("/");
   }
   const onChangeData = (e) => {

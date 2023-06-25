@@ -4,7 +4,7 @@ import { createClient } from "next-sanity";
 import jwt from "jsonwebtoken";
 
 export const POST = async (req, res) => {
-  const data = await req.json();
+  const request = await req.json();
 
   const sanity = {
     projectId: process.env.NEXT_PUBLIC_APP_KEY,
@@ -15,36 +15,36 @@ export const POST = async (req, res) => {
   const clients = createClient(sanity);
 
   try {
-    const user = await clients.fetch(
+    const data = await clients.fetch(
       `*[_type == 'user' && email == $email] [0]  `,
       {
-        email: data.email,
+        email: request.email,
       }
     );
 
-    if (!user) {
+    if (!data) {
       return new Response(`user does not exist.`, {
         status: 400,
       });
     } else {
-      const isMatch = await bcrypt.compare(data.password, user.password);
+      const isMatch = await bcrypt.compare(request.password, data.password);
 
       if (!isMatch) {
         return new Response(`inValid credential.`, {
           status: 400,
         });
       } else {
-        const token = jwt.sign({ id: user._id }, "thisishardestkeyever");
-        delete user.password;
+        const token = jwt.sign({ id: data._id }, "thisishardestkeyever");
+        delete data.password;
 
         Cookies.set("user", {
-          name: user.name,
-          email: user.email,
-          phone: user.phone,
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
           token: token,
         });
 
-        return new Response(JSON.stringify({ user, token }), {
+        return new Response(JSON.stringify({ data, token }), {
           status: 200,
         });
       }

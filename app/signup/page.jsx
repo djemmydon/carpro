@@ -6,6 +6,7 @@ import Cookies from "js-cookie";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { toast } from "react-toastify";
 import styles from "../../styles/sell.module.css";
 
 const SignUp = () => {
@@ -13,7 +14,7 @@ const SignUp = () => {
 
   const user = Cookies.get("user");
   const userObject = user ? JSON.parse(user) : null;
-  const firstWord = user && userObject?.user.name.split(" ")[0];
+  const firstWord = user && userObject?.data.name.split(" ")[0];
   console.log(firstWord);
 
   const [data, setData] = useState({
@@ -25,7 +26,7 @@ const SignUp = () => {
     password: "",
   });
 
-  if (userObject?.user?.email) {
+  if (userObject?.data?.email) {
     router.push("/");
   }
 
@@ -47,19 +48,13 @@ const SignUp = () => {
       .then((response) => {
         try {
           if (response) {
+            toast("Account Created successfully✔️");
+
             console.log(response, "No Response");
             Cookies.set("user", JSON.stringify(response.data));
             setLoading(false);
-            toast("Account Created successfully✔️");
 
-            setData({
-              name: "",
-              email: "",
-              phone: "",
-              state: "",
-              city: "",
-              password: "",
-            });
+    
           }
         } catch (error) {
           console.log(error);

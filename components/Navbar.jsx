@@ -10,7 +10,7 @@ function Navbar() {
   const [open, setOpen] = useState(false);
   const user = Cookies.get("user");
   const userObject = user ? JSON.parse(user) : null;
-  const firstWord = user && userObject?.user.name?.split(" ")[0];
+  const firstWord = user && userObject?.data?.name?.split(" ")[0];
   console.log(firstWord);
 
   return (
@@ -38,37 +38,30 @@ function Navbar() {
             <Link href="/">Contact</Link>
           </li>
           <li onClick={() => setOpen(false)} className={styles.sale}>
-            {/* {userObject ? (
+            {userObject ? (
               <div>
                 <p style={{ color: "#428bca" }}>{firstWord}</p>
               </div>
             ) : (
-          
-                <Link href="/signup">Login</Link>
-         
-            )} */}
-            <Link href="/signin">Login</Link>
+              <Link href="/signin">Login</Link>
+            )}
           </li>
         </ul>
       </div>
 
       <div className={styles.change}>
-        {/* {userObject ? (
+        {userObject ? (
           <div>
             <p style={{ color: "#428bca" }}>{firstWord}</p>
           </div>
         ) : (
           <div className={styles.button}>
-            <Link href="/signup">
+            <Link href="/signin">
               <button>Login</button>
             </Link>
           </div>
-        )} */}
-        <div className={styles.button}>
-          <Link href="/signin">
-            <button>Login</button>
-          </Link>
-        </div>
+        )}
+  
       </div>
       <div className={styles.searchInput}>
         <Hamburger size={26} toggled={open} toggle={setOpen} color="#428bca" />
