@@ -38,31 +38,37 @@ function Navbar() {
             <Link href="/">Contact</Link>
           </li>
           <li onClick={() => setOpen(false)} className={styles.sale}>
-            {userObject ? (
+            {/* {userObject ? (
               <div>
                 <p style={{ color: "#428bca" }}>{firstWord}</p>
               </div>
             ) : (
           
-                <Link href="/signup">Sales Agent</Link>
+                <Link href="/signup">Login</Link>
          
-            )}
+            )} */}
+            <Link href="/signin">Login</Link>
           </li>
         </ul>
       </div>
 
       <div className={styles.change}>
-        {userObject ? (
+        {/* {userObject ? (
           <div>
             <p style={{ color: "#428bca" }}>{firstWord}</p>
           </div>
         ) : (
           <div className={styles.button}>
             <Link href="/signup">
-              <button>Sales Agent</button>
+              <button>Login</button>
             </Link>
           </div>
-        )}
+        )} */}
+        <div className={styles.button}>
+          <Link href="/signin">
+            <button>Login</button>
+          </Link>
+        </div>
       </div>
       <div className={styles.searchInput}>
         <Hamburger size={26} toggled={open} toggle={setOpen} color="#428bca" />

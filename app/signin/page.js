@@ -6,6 +6,7 @@ import Cookies from "js-cookie";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { toast } from "react-toastify";
 import styles from "../../styles/sell.module.css";
 
 const SignUp = () => {
@@ -43,6 +44,8 @@ const SignUp = () => {
             console.log(response, "No Response");
             Cookies.set("user", JSON.stringify(response.data));
             setLoading(false);
+            toast("Login successfully✔️");
+
             setData({
               email: "",
               password: "",
