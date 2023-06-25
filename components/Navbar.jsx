@@ -3,6 +3,7 @@ import Hamburger from "hamburger-react";
 import Cookies from "js-cookie";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import styles from "../styles/navbar.module.css";
 
@@ -12,6 +13,8 @@ function Navbar() {
   const userObject = user ? JSON.parse(user) : null;
   const firstWord = user && userObject?.data?.name?.split(" ")[0];
   console.log(firstWord);
+
+  const router = useRouter();
 
   return (
     <div className={styles.navBody}>
@@ -37,22 +40,50 @@ function Navbar() {
           <li onClick={() => setOpen(false)}>
             <Link href="/">Contact</Link>
           </li>
+    
           <li onClick={() => setOpen(false)} className={styles.sale}>
             {userObject ? (
               <div>
-                <p style={{ color: "#428bca" }}>{firstWord}</p>
+                <p
+                  onClick={() => {
+                    Cookies.remove("user");
+                    router.push("/");
+                  }}
+                  style={{ color: "#fe2020" }}
+                >
+                  Logout
+                </p>
               </div>
-            ) : (
-              <Link href="/signin">Login</Link>
-            )}
+            ) : null}
           </li>
         </ul>
       </div>
 
       <div className={styles.change}>
         {userObject ? (
-          <div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <p style={{ color: "#428bca" }}>{firstWord}</p>
+            <div className={styles.button}>
+              <button
+                style={{
+                  backgroundColor: "#fe2020",
+                  borderRadius: 10,
+                  width: 100,
+                }}
+                onClick={() => {
+                  Cookies.remove("user");
+                  router.push("/");
+                }}
+              >
+                Logout
+              </button>
+            </div>
           </div>
         ) : (
           <div className={styles.button}>
@@ -61,7 +92,6 @@ function Navbar() {
             </Link>
           </div>
         )}
-  
       </div>
       <div className={styles.searchInput}>
         <Hamburger size={26} toggled={open} toggle={setOpen} color="#428bca" />
