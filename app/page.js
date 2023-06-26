@@ -38,7 +38,7 @@ export default async function Home() {
         }}
       >
         {data.props.data.map((item) => (
-          <Card item={item} />
+          <Card key={item._id} item={item} />
         ))}
       </div>
       <div className="buttons">

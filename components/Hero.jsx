@@ -5,7 +5,8 @@ import React, { useEffect } from "react";
 import { styled } from "styled-components";
 import styles from "../styles/hero.module.css";
 import AOS from "aos";
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
+import Link from "next/link";
 
 function Hero() {
   useEffect(() => {
@@ -20,15 +21,13 @@ function Hero() {
           <h1>LUXURY CARS</h1>
           <h3>SELL | TRADE</h3>
 
-          <button>Get Started</button>
+          <Link href="/cars">
+            <button>Get Started</button>
+          </Link>
         </div>
 
         <div className="images">
-          <Image
-            src="/images/car1.png"
-            width={700}
-            height={550}
-          />
+          <Image src="/images/car1.png" alt="Carpro Cars is the best place to get a car" width={700} height={550} />
         </div>
       </div>
     </div>

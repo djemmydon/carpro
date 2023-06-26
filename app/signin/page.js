@@ -4,7 +4,6 @@ import Form, { Form2, Form3 } from "@/components/Form";
 import validateForm from "@/utils/validateForm";
 import axios from "axios";
 import Cookies from "js-cookie";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "react-toastify";

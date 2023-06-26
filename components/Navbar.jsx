@@ -20,7 +20,12 @@ function Navbar() {
   return (
     <div className={styles.navBody}>
       <div className={styles.navLogo}>
-        <Image src="/images/carlogo1.png" width={100} height={50} />
+        <Image
+          src="/images/carlogo1.png"
+          alt="Carpro Cars is the best place to get a car"
+          width={100}
+          height={50}
+        />
       </div>
 
       <div
