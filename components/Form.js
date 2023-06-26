@@ -78,7 +78,7 @@ const Form = ({ styling, onSubmit, onChangeData, loading }) => {
 
 export default Form;
 
-export const Form2 = ({ styling, onSubmit, onChangeData, loading }) => {
+export const Form2 = ({ styling, onSubmit, onChangeData, loading, error }) => {
   console.log(process.env.NEXT_APP_EMAIL_PASS, process.env.NEXT_APP_EMAIL);
 
   return (
@@ -93,6 +93,7 @@ export const Form2 = ({ styling, onSubmit, onChangeData, loading }) => {
             type="text"
             placeholder="Enter your name"
           />
+          {error.name && <p>{error.name}</p>}
         </div>
         <div className={styling.formItem}>
           <label>Phone Number</label>
@@ -102,6 +103,7 @@ export const Form2 = ({ styling, onSubmit, onChangeData, loading }) => {
             type="text"
             placeholder="Enter your Phone number"
           />
+          {error.phone && <p>{error.phone}</p>}
         </div>
         <div className={styling.formItem}>
           <label>Email</label>
@@ -111,6 +113,15 @@ export const Form2 = ({ styling, onSubmit, onChangeData, loading }) => {
             type="text"
             placeholder="Enter your email"
           />
+          {error.email && <p>{error.email}</p>}
+        </div>
+        <div className={styling.formItem}>
+          <label>You are creating as an</label>
+          <select name="typeOf" onChange={onChangeData}>
+            <option value="Agent">Agent</option>
+            <option value="User">User</option>
+          </select>
+          {error.typeOf && <p>{error.typeOf}</p>}
         </div>
         <div className={styling.formItem}>
           <label>State</label>
@@ -120,6 +131,7 @@ export const Form2 = ({ styling, onSubmit, onChangeData, loading }) => {
             type="text"
             placeholder="Enter your state"
           />
+          {error.state && <p>{error.state}</p>}
         </div>
         <div className={styling.formItem}>
           <label>City</label>
@@ -129,6 +141,7 @@ export const Form2 = ({ styling, onSubmit, onChangeData, loading }) => {
             type="text"
             placeholder="Enter your city"
           />
+          {error.city && <p>{error.city}</p>}
         </div>
         <div className={styling.formItem}>
           <label>Password</label>
@@ -138,16 +151,21 @@ export const Form2 = ({ styling, onSubmit, onChangeData, loading }) => {
             type="password"
             placeholder="Enter Password"
           />
+          {error.password && <p>{error.password}</p>}
         </div>
 
         <button type="submit">{loading ? "Loading" : "Sign Up"} </button>
-        <p>Already have an account <Link href="/signin" style={{color:"#428bca"}}>Login</Link></p>
-
+        <p>
+          Already have an account{" "}
+          <Link href="/signin" style={{ color: "#428bca" }}>
+            Login
+          </Link>
+        </p>
       </div>
     </form>
   );
 };
-export const Form3 = ({ styling, onSubmit, onChangeData, loading }) => {
+export const Form3 = ({ styling, onSubmit, onChangeData, loading, error }) => {
   console.log(process.env.NEXT_APP_EMAIL_PASS, process.env.NEXT_APP_EMAIL);
 
   return (
@@ -162,6 +180,7 @@ export const Form3 = ({ styling, onSubmit, onChangeData, loading }) => {
             type="text"
             placeholder="Enter your email"
           />
+          {error.email && <p>{error.email}</p>}
         </div>
 
         <div className={styling.formItem}>
@@ -172,12 +191,17 @@ export const Form3 = ({ styling, onSubmit, onChangeData, loading }) => {
             type="password"
             placeholder="Enter Password"
           />
+          {error.password && <p>{error.password}</p>}
         </div>
 
         <button type="submit">{loading ? "Loading..." : "Sign Up"} </button>
 
-        <p>Create a new account <Link href="/signup" style={{color:"#428bca"}}>Signup</Link></p>
-
+        <p>
+          Create a new account{" "}
+          <Link href="/signup" style={{ color: "#428bca" }}>
+            Signup
+          </Link>
+        </p>
       </div>
     </form>
   );

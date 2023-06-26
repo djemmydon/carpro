@@ -50,20 +50,37 @@
   flex-direction: column;
   padding: 5px 20px;
 }
-
-.formItem input {
-  border-radius: 10px;
-  outline: none;
-  background: none;
-  height: 40px;
-  width: 400px;
-  color: #000;
-  font-size: 1rem;
-  font-family: "Roboto", sans-serif;
-
-  border: 1px solid rgb(197, 197, 197);
-  padding: 2px 5px;
+.formItem p{
+    font-size: 0.9rem;
+    padding: 0.4rem 0;
+    color: #f20202;
 }
+.formItem input {
+    border-radius: 10px;
+    outline: none;
+    background: none;
+    height: 40px;
+    width: 400px;
+    color: #000;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+  
+    border: 1px solid rgb(197, 197, 197);
+    padding: 2px 5px;
+  }
+  .formItem select {
+    border-radius: 10px;
+    outline: none;
+    background: none;
+    height: 40px;
+    width: 400px;
+    color: #000;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+  
+    border: 1px solid rgb(197, 197, 197);
+    padding: 2px 5px;
+  }
 
 .formItem input[type="date"]::-webkit-calendar-picker-indicator {
   color: rgba(0, 0, 0, 0);

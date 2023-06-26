@@ -96,6 +96,10 @@ export const POST = async (req, res) => {
 
    </tr>
    <tr>
+   <td>Account Type: ${data.typeOf}</td>
+
+   </tr>
+   <tr>
    <td>Phone Number: ${data.phone}</td>
 
    </tr>

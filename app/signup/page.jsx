@@ -1,6 +1,7 @@
 "use client";
 
 import Form, { Form2 } from "@/components/Form";
+import validateForm from "@/utils/validateForm";
 import axios from "axios";
 import Cookies from "js-cookie";
 import Image from "next/image";
@@ -20,12 +21,14 @@ const SignUp = () => {
   const [data, setData] = useState({
     name: "",
     email: "",
+    typeOf: "",
     phone: "",
     state: "",
     city: "",
     password: "",
   });
 
+  const [error, setError] = useState({});
   if (userObject?.data?.email) {
     router.push("/");
   }
@@ -38,31 +41,34 @@ const SignUp = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    await axios
-      .post("/api/user/sign-up", data, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-      .then((response) => {
-        try {
-          if (response) {
-            toast("Account Created successfully✔️");
+    if (error) {
+      setError(validateForm(data));
+    } else {
+      setLoading(true);
 
-            console.log(response, "No Response");
-            Cookies.set("user", JSON.stringify(response.data));
+      await axios
+        .post("/api/user/sign-up", data, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        .then((response) => {
+          try {
+            if (response) {
+              toast("Account Created successfully✔️");
+
+              console.log(response, "No Response");
+              Cookies.set("user", JSON.stringify(response.data));
+              setLoading(false);
+            }
+          } catch (error) {
+            console.log(error);
             setLoading(false);
-
-    
+          } finally {
+            setLoading(false);
           }
-        } catch (error) {
-          console.log(error);
-          setLoading(false);
-        } finally {
-          setLoading(false);
-        }
-      });
+        });
+    }
   };
   return (
     <main className={styles.main}>
@@ -70,6 +76,7 @@ const SignUp = () => {
         <div className={styles.form}>
           <Form2
             loading={loading}
+            error={error}
             styling={styles}
             onSubmit={onSubmit}
             onChangeData={onChangeData}
