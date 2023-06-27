@@ -105,7 +105,7 @@
 }
 
 .formBody button {
-  width: 100px;
+  width: 400px;
   height: 40px;
   border: none;
   outline: none;
@@ -114,6 +114,7 @@
   font-size: 1rem;
   font-family: "Roboto", sans-serif;
   border-radius: 10px;
+  
 }
 @media screen and (max-width: 800px) {
   .main {
@@ -132,6 +133,9 @@
   }
 
   .formItem input {
+    width: 300px;
+  }
+  .formItem button {
     width: 300px;
   }
 }

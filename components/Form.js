@@ -70,7 +70,9 @@ const Form = ({ styling, onSubmit, onChangeData, loading }) => {
           <label>Time</label>
           <input name="time" onChange={onChangeData} type="time" />
         </div>
-        <button type="submit">{loading ? "Loading" : "Submit"} </button>
+        <div className={styling.formItem}>
+          <button type="submit">{loading ? "Loading" : "Sign Up"} </button>
+        </div>
       </div>
     </form>
   );
@@ -116,14 +118,6 @@ export const Form2 = ({ styling, onSubmit, onChangeData, loading, error }) => {
           {error.email && <p>{error.email}</p>}
         </div>
         <div className={styling.formItem}>
-          <label>You are creating as an</label>
-          <select name="typeOf" onChange={onChangeData}>
-            <option value="Agent">Agent</option>
-            <option value="User">User</option>
-          </select>
-          {error.typeOf && <p>{error.typeOf}</p>}
-        </div>
-        <div className={styling.formItem}>
           <label>State</label>
           <input
             name="state"
@@ -154,7 +148,9 @@ export const Form2 = ({ styling, onSubmit, onChangeData, loading, error }) => {
           {error.password && <p>{error.password}</p>}
         </div>
 
-        <button type="submit">{loading ? "Loading" : "Sign Up"} </button>
+        <div className={styling.formItem}>
+          <button type="submit">{loading ? "Loading" : "Sign Up"} </button>
+        </div>
         <p>
           Already have an account{" "}
           <Link href="/signin" style={{ color: "#428bca" }}>
@@ -194,7 +190,9 @@ export const Form3 = ({ styling, onSubmit, onChangeData, loading, error }) => {
           {error.password && <p>{error.password}</p>}
         </div>
 
-        <button type="submit">{loading ? "Loading..." : "Sign Up"} </button>
+        <div className={styling.formItem}>
+          <button type="submit">{loading ? "Loading" : "Sign Up"} </button>
+        </div>
 
         <p>
           Create a new account{" "}

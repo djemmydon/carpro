@@ -20,7 +20,7 @@ const SignUp = () => {
   const [data, setData] = useState({
     name: "",
     email: "",
-    typeOf: "User",
+    typeOf: "Agent",
     phone: "",
     state: "",
     city: "",
@@ -48,8 +48,7 @@ const SignUp = () => {
       await axios
         .post(
           "/api/user/sign-up",
-          { ...data, typeOf: "User" },
-
+          { ...data, typeOf: "Sales-Agent" },
           {
             headers: {
               "Content-Type": "application/json",

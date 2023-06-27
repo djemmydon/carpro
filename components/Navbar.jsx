@@ -44,7 +44,7 @@ function Navbar() {
             <Link href="/sell-car">Sell Cars</Link>
           </li>
           <li onClick={() => setOpen(false)}>
-            <Link href="/">Contact</Link>
+            <Link href="/sales-agent">Sales Agent</Link>
           </li>
 
           <li onClick={() => setOpen(false)} className={styles.sale}>
@@ -62,7 +62,7 @@ function Navbar() {
                 </p>
               </div>
             ) : (
-              <Link href="/signin">Login</Link>
+              <Link href="/signin">Signup / Login</Link>
             )}
           </li>
         </ul>
@@ -98,7 +98,7 @@ function Navbar() {
         ) : (
           <div className={styles.button}>
             <Link href="/signin">
-              <button>Login</button>
+              <button>Signup / Login</button>
             </Link>
           </div>
         )}

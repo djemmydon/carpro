@@ -39,6 +39,7 @@ export const POST = async (req, res) => {
       phone: data.phone,
       city: data.city,
       state: data.state,
+      typeOf: data.typeOf,
       password: passwordHash,
     });
 
