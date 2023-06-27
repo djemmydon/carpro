@@ -78,7 +78,7 @@ export const POST = async (req, res) => {
     <!-- HTML Code: Place this code in the document's body (between the 'body' tags) where the table should appear -->
  <body>
 <div>
-<p>Congratulations 🎉! A new agent has just signed up on your website</p>
+<p>Congratulations 🎉! A new ${data.phone} has just signed up on your website</p>
 </div>
 
  <table class="GeneratedTable">

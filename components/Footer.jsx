@@ -11,7 +11,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.footerBody}>
         <div>
-          <div className="headers">
+          <div className={styles.headers}>
             <h2>Useful Links</h2>
           </div>
           <ul>
@@ -35,7 +35,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <div className="headers">
+          <div className={styles.headers}>
             <h2>Follow Us</h2>
           </div>
           <ul>

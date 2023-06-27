@@ -4,8 +4,7 @@ import Navbar from "@/components/Navbar";
 import Head from "next/head";
 import Footer from "@/components/Footer";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-
+import "react-toastify/dist/ReactToastify.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
+        <link rel="icon" href="/favicon.png" />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
@@ -31,8 +31,8 @@ export default function RootLayout({ children }) {
         />
       </Head>
       <body className={inter.className}>
-      <ToastContainer />
-        
+        <ToastContainer />
+
         <nav>
           <Navbar />
         </nav>
