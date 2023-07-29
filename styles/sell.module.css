@@ -50,37 +50,37 @@
   flex-direction: column;
   padding: 5px 20px;
 }
-.formItem p{
-    font-size: 0.9rem;
-    padding: 0.4rem 0;
-    color: #f20202;
+.formItem p {
+  font-size: 0.9rem;
+  padding: 0.4rem 0;
+  color: #f20202;
 }
 .formItem input {
-    border-radius: 10px;
-    outline: none;
-    background: none;
-    height: 40px;
-    width: 400px;
-    color: #000;
-    font-size: 1rem;
-    font-family: "Roboto", sans-serif;
-  
-    border: 1px solid rgb(197, 197, 197);
-    padding: 2px 5px;
-  }
-  .formItem select {
-    border-radius: 10px;
-    outline: none;
-    background: none;
-    height: 40px;
-    width: 400px;
-    color: #000;
-    font-size: 1rem;
-    font-family: "Roboto", sans-serif;
-  
-    border: 1px solid rgb(197, 197, 197);
-    padding: 2px 5px;
-  }
+  border-radius: 10px;
+  outline: none;
+  background: none;
+  height: 40px;
+  width: 400px;
+  color: #000;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+
+  border: 1px solid rgb(197, 197, 197);
+  padding: 2px 5px;
+}
+.formItem select {
+  border-radius: 10px;
+  outline: none;
+  background: none;
+  height: 40px;
+  width: 400px;
+  color: #000;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+
+  border: 1px solid rgb(197, 197, 197);
+  padding: 2px 5px;
+}
 
 .formItem input[type="date"]::-webkit-calendar-picker-indicator {
   color: rgba(0, 0, 0, 0);
@@ -114,7 +114,6 @@
   font-size: 1rem;
   font-family: "Roboto", sans-serif;
   border-radius: 10px;
-  
 }
 @media screen and (max-width: 800px) {
   .main {
@@ -138,4 +137,105 @@
   .formItem button {
     width: 300px;
   }
+}
+
+.startGen {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  margin: 3rem 0;
+}
+.startGen .image {
+  width: 500px;
+  height: 400px;
+}
+
+@media screen and (max-width:600px) {
+  .startGen  {
+    margin: 0 2rem;
+  }
+  .startGen .image {
+    width: 400px;
+    height: 400px;
+  }
+
+
+  
+}
+@media screen and (max-width:400px) {
+  .startGen .image {
+    width: 300px;
+    height: 300px;
+  }
+
+  
+.startGen .text p {
+  color: #000;
+  font-size: 0.8rem;
+}
+  
+}
+.startGen .image img {
+  width: 100%;
+  height: 100%;
+}
+.startGen .text p {
+  color: #000;
+  font-size: 1.3rem;
+}
+.startGen .text button {
+  width: 200px;
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: #428bca;
+  color: #fff;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+.howItWorks {
+  color: #000;
+  margin: 2rem 0;
+}
+.howItWorks h3 {
+  text-align: center;
+  font-size: 2rem;
+  color: #428bca;
+  margin: 3rem 0;
+}
+.howItWorks ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.howItWorks ul li {
+  font-size: 0.9rem;
+  width: 300px;
+  height: 200px;
+  color: gray;
+}
+
+.howItWorks ul li h1 {
+  font-size: 1rem;
+  padding: 15px 0;
+  height: 50px;
+  color: #000;
+}
+
+.howItWorks ul li .icon {
+  font-size: 3rem;
+  color: #428bca;
+
+  height: 50px;
 }

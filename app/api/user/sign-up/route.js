@@ -14,6 +14,7 @@ export const POST = async (req, res) => {
     dataset: "production",
     token: process.env.NEXT_PUBLIC_APP_TOKEN,
   };
+  
 
   const clients = createClient(sanity);
 

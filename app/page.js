@@ -9,19 +9,17 @@ export const getProduct = async () => {
   const query = `*[_type == 'cars' ]`;
 
   const products = await client.fetch(query);
-  return {
-    props: {
-      data: products.slice(1, 7),
-    },
-  };
+  return products.slice(1, 7).sort((a, b) => b._updatedAt.localeCompare(a._updatedAt))
+
 };
 
 export default async function Home() {
   const data = await getProduct();
+  const single = data[0];
 
   return (
     <main>
-      <Hero />
+      <Hero data={single} />
 
       <div className="head">
         <h2>Popular Cars</h2>
@@ -37,7 +35,7 @@ export default async function Home() {
           margin: 20,
         }}
       >
-        {data.props.data.map((item) => (
+        {data.map((item) => (
           <Card key={item._id} item={item} />
         ))}
       </div>

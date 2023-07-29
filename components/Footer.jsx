@@ -55,7 +55,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="https://instagram.com/biggestcarplug?igshid=NTc4MTIwNjQ2YQ==">
                 <AiFillInstagram size={30} />
               </a>
             </li>

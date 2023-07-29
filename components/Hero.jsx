@@ -7,8 +7,9 @@ import styles from "../styles/hero.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
+import { urlFor } from "@/utils/sanity";
 
-function Hero() {
+function Hero({ data }) {
   useEffect(() => {
     AOS.init();
   }, []);
@@ -17,17 +18,22 @@ function Hero() {
     <div className={styles.body}>
       <div className={styles.content}>
         <div className={styles.text}>
-          <h4>With Carpro</h4>
-          <h1>LUXURY CARS</h1>
-          <h3>SELL | TRADE</h3>
+          <h1>{data?.modelName}</h1>
+          <h3>₦{parseInt(data?.price).toLocaleString()}</h3>
 
-          <Link href="/cars">
+          <Link href={`cars/${data.slug.current}`}>
             <button>Get Started</button>
           </Link>
         </div>
 
         <div className="images">
-          <Image src="/images/car1.png" alt="Carpro Cars is the best place to get a car" width={700} height={550} />
+          <Image
+            src={urlFor(data?.images[0]).url()}
+            alt="Carpro Cars is the best place to get a car"
+            width={700}
+            height={550}
+            className={styles.image}
+          />
         </div>
       </div>
     </div>

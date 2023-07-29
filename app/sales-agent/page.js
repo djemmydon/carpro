@@ -1,93 +1,74 @@
 "use client";
 
-import Form, { Form2 } from "@/components/Form";
-import validateForm from "@/utils/validateForm";
-import axios from "axios";
-import Cookies from "js-cookie";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
-import { toast } from "react-toastify";
+import Image from "next/image";
+import Link from "next/link";
+import { AiOutlineLogin, AiOutlineTransaction } from "react-icons/ai";
+import { FaRegMoneyBillAlt } from "react-icons/fa";
+import { MdOutlineHotelClass, MdLocalOffer } from "react-icons/md";
 import styles from "../../styles/sell.module.css";
 
-const SignUp = () => {
-  const router = useRouter();
-
-  const user = Cookies.get("user");
-  const userObject = user ? JSON.parse(user) : null;
-  const firstWord = user && userObject?.data.name.split(" ")[0];
-  console.log(firstWord);
-
-  const [data, setData] = useState({
-    name: "",
-    email: "",
-    typeOf: "Agent",
-    phone: "",
-    state: "",
-    city: "",
-    password: "",
-  });
-
-  const [error, setError] = useState({});
-  if (userObject?.data?.email) {
-    router.push("/");
-  }
-
-  const [loading, setLoading] = useState(false);
-
-  const onChangeData = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value });
-  };
-
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    if (error.password && error.email && error.name && error.state) {
-      setError(validateForm(data));
-    } else {
-      setLoading(true);
-
-      await axios
-        .post(
-          "/api/user/sign-up",
-          { ...data, typeOf: "Sales-Agent" },
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        )
-        .then((response) => {
-          try {
-            if (response) {
-              toast("Account Created successfully✔️");
-
-              console.log(response, "No Response");
-              Cookies.set("user", JSON.stringify(response.data));
-              setLoading(false);
-            }
-          } catch (error) {
-            console.log(error);
-            setLoading(false);
-          } finally {
-            setLoading(false);
-          }
-        });
-    }
-  };
+const SaleAgent = () => {
   return (
     <main className={styles.main}>
-      <div className={styles.mainBody}>
-        <div className={styles.form}>
-          <Form2
-            loading={loading}
-            error={error}
-            styling={styles}
-            onSubmit={onSubmit}
-            onChangeData={onChangeData}
-          />
+      <div className={styles.hey}>
+        <div className={styles.startGen}>
+          <div className={styles.image}>
+            <img src="/images/car2.jpg" />
+          </div>
+          <div className={styles.text}>
+            <p>
+              Start generating income using your smartphone by becoming a Carpro
+              Direct Sales Agent (DSA). As a DSA, you will receive a regular
+              monthly allowance along with commissions for each car deal you
+              successfully close
+            </p>
+            <Link href={"/sales-agent/start"}>
+              <button>Get Started</button>
+            </Link>
+          </div>
+        </div>
+        <div className={styles.howItWorks}>
+          <h3>How it work</h3>
+          <ul>
+            <li>
+              <AiOutlineLogin className={styles.icon} />
+              <h1>Sign up to work with us</h1>
+              Join our team by registering to collaborate with us and embark on
+              a journey towards earning lucrative income.
+            </li>
+            <li>
+              <MdOutlineHotelClass className={styles.icon} />
+              <h1>Get trained </h1>
+              Get trained Receive comprehensive training from us to learn the
+              necessary guidelines and best practices. Once you grasp the
+              concepts, you will navigate through the process effortlessly.
+            </li>
+            <li>
+              <MdLocalOffer className={styles.icon} />
+              <h1>Discover and offer assistance to clients in need </h1>
+              Identify prospective car purchasers and assist them in overcoming
+              obstacles that hinder them from achieving their automotive
+              aspirations.
+            </li>
+            <li>
+              <AiOutlineTransaction className={styles.icon} color="#428bca" />
+              <h1>
+                Finalize transactions and receive compensation for your efforts
+              </h1>
+              Earn your commission and a monthly allowance for each successful
+              deal you secure.
+            </li>
+            <li>
+              <FaRegMoneyBillAlt className={styles.icon} color="#428bca" />
+              <h1>Earn through referrals</h1>
+              Introduce a friend or family member to become an agent, and you'll
+              receive a 0.5% commission from their transactions. Enroll today!
+            </li>
+          </ul>
         </div>
       </div>
     </main>
   );
 };
 
-export default SignUp;
+export default SaleAgent;
