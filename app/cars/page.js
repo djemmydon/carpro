@@ -8,7 +8,7 @@ export const getProduct = async () => {
   const products = await client.fetch(query);
   return {
     props: {
-      data: products,
+      data: products
     },
   };
 };
@@ -33,7 +33,7 @@ async function Cars() {
             margin: 20,
           }}
         >
-          {data.props.data.map((item) => (
+          {data.props.data.sort((a, b) => b._createdAt.localeCompare(a._createdAt)).map((item) => (
             <Card key={item._id} item={item} />
           ))}
         </div>

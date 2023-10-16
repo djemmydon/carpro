@@ -9,8 +9,9 @@ export const getProduct = async () => {
   const query = `*[_type == 'cars' ]`;
 
   const products = await client.fetch(query);
-  return products.slice(1, 7).sort((a, b) => b._updatedAt.localeCompare(a._updatedAt))
-
+  return products
+    .slice(1, 7)
+    .sort((a, b) => b._createdAt.localeCompare(a._createdAt));
 };
 
 export default async function Home() {

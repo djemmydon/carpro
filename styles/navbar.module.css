@@ -5,6 +5,7 @@
   justify-content: space-around;
   align-items: center;
   padding: 20px 20px;
+  position: relative;
 }
 
 .navList {
@@ -98,6 +99,9 @@
 @media screen and (max-width: 600px) {
   .searchInput {
     display: block;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
   .button {
     display: none;
@@ -107,7 +111,47 @@
     display: block;
   }
 
-  .change{
+  .change {
     display: none;
   }
+
+  .searchIconDesktop {
+    display: none;
+  }
+}
+
+.searchBox {
+  position: absolute;
+  top: 6rem;
+  right: 1rem;
+  width: 300px;
+  height: 300px;
+  overflow-y: scroll;
+  background-color: #d5eafc;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  z-index: 100;
+  box-shadow: 1px 1px 10px rgba(87, 85, 85, 0.656);
+}
+
+.form input {
+  color: #000;
+  background-color: #ffff;
+  width: 100%;
+  border: 2px solid gray;
+  border-top: none;
+  outline: none;
+  padding: 10px;
+}
+
+.searchBox ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #004480;
+  padding: 10px 5px;
+}
+
+.searchBox ul li {
+  border-bottom: 1px solid black;
 }
